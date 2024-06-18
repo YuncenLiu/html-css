@@ -1,0 +1,10 @@
+{
+  "vimMode": false,
+  "promptDelete": false,
+  "alwaysUpdateLinks": false,
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": false,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./images/"
+}

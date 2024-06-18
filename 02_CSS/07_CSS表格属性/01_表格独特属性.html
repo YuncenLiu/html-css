@@ -7,8 +7,18 @@
         table {
             border: 2px green solid;
             width: 500px;
-
+            /* 控制表格的列宽 */
             table-layout: fixed;
+            /* 控制单元格间距 (生效前提,不能合并边框) */
+            border-spacing: 2px;
+            /* 合并相邻单元格的边框 */
+            /*border-collapse: collapse;*/
+
+            /* 隐藏没有内容的单元格 (生效前提,不能合并边框) */
+            empty-cells: hide;
+            /* 设置表格标题位置 */
+            caption-side: bottom;
+
         }
 
         td, th {
@@ -40,7 +50,7 @@
         <th>2</th>
         <th>李四</th>
         <th>19</th>
-        <th>女</th>
+        <th></th>
         <th>团员</th>
     </tr>
     <tr>
