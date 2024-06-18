@@ -7,13 +7,58 @@
         div {
             font-size: 40px;
         }
+
         .yun {
-            color: red;
+            /*color: red;*/
         }
+
+        .yun1 {
+            text-decoration: overline;
+        }
+
+        .yun2 {
+            letter-spacing: 5px;
+            text-decoration: underline;
+        }
+
+        .yun3 {
+            /* 不处理中文 原理通过空格区分间隔，中文不会有空格*/
+            word-spacing: 5px;
+            text-decoration: line-through;
+        }
+
+        .yun4 {
+            text-decoration: none;
+        }
+
+        .yun5 {
+            /*text-decoration: underline dotted;*/
+
+            /* 下滑绿色波浪线 */
+            text-decoration: underline wavy green;
+        }
+
+        .yun6 {
+            text-indent: 80px;
+        }
+        .yun7 {
+            background-color: orange;
+            text-align: right;
+        }
+
     </style>
 </head>
 <body>
-    <div class="yun">热爱学习</div>
+<div>
+    <div class="yun">like study</div>
+    <div class="yun1">You got a dream, you gotta protect it</div>
+    <div class="yun2">You got a dream, you gotta protect it</div>
+    <div class="yun3">You got a dream, you gotta protect it</div>
+    <a href="#" class="yun4">You got a dream, you gotta protect it</a>
+    <div class="yun5">You got a dream, you gotta protect it</div>
+    <div class="yun6">You got a dream, you gotta protect it</div>
+    <div class="yun7">You got a dream, you gotta protect it</div>
+</div>
 
 </body>
 </html>

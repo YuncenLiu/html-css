@@ -471,3 +471,191 @@ div {
 }
 ```
 
+
+
+### CSS文本属性
+
+#### 文本颜色
+
+```css
+color: red;
+```
+
+
+
+#### 文本间距
+
+字母间距： `letter-spacing`
+
+单词间距：`word-spacing` （通过空格识别词）
+
+属性值为像素（`px`），正值让间距增大，负值让间距缩小
+
+
+
+#### 文本修饰
+
+属性名：`text-decoration`
+
+可选值：
+
+1. `none`：无装饰线（常用）
+2. `underline`：下划线（常用
+3. `overline`：上划线
+4. `line-through`：删除线
+
+可以搭配使用：
+
+1. `dotted` 虚线
+2. `wavy`：波浪线
+3. 也可以指定颜色
+
+```css
+a {text-decoration: none;}
+div {text-decoration: underline wavy green;}
+```
+
+
+
+#### 文本缩进
+
+属性名：`text-index` ，单位 px
+
+```css
+div { text-index: 40px }
+```
+
+
+
+#### 文本对齐-水平
+
+属性：`text-align`
+
+1. `left` 左对齐、默认值
+2. `right` 右对齐
+3. `center` 中间对齐
+
+
+
+#### 文字对齐-垂直
+
+顶部：无需任何属性，在垂直方向上，默认就是顶部对齐
+
+居中：仅对于单行文字， hegiht =  line-hegiht 即可（多行文字往下看）
+
+底部：仅对于单行文字，`line-height = height * 2 - font - size - x`
+
+
+
+#### 文本大小-行高
+
+属性：`line-height`
+
+1. normal 由浏览器根据文字大小决定默认值
+2. 像素 px
+3. 数字，参考自身 `font-size` 到倍数 常用
+4. 百分比，参考自身 `font-size` 百分比
+
+> 建议设置为 font-size 的 <u>1.5 - 2.0</u> 倍之间
+>
+> 为啥建议些 数字呢？ 因为继承问题，如果直接写 像素，继承后代对不同的font-size 会有问题。
+
+
+
+```css
+.yun1 {
+  font-size: 100px;
+  /* 建议写到 1.5 - 2.0 之间 */
+  /*line-height: 1.5;*/
+  /*line-height: 150%;*/
+  /*line-height: normal;*/
+  line-height: 150px;
+}
+```
+
+
+
+行高的应用场景：
+
+1. 解决多行之间的间距
+
+2. 解决单行文字的垂直居中问题 将
+
+	```css
+	#font {
+	  height: 100px;
+	  line-hegiht: 100px
+	}
+	```
+
+
+
+注意事项：
+
+1. `line-height` 过小，会导致文字产生重叠
+2. `line-hegiht` 可以继承，未来更好呈现文字，最好写数值
+3. `line-hegiht` 和 `hegiht` 的关系，如果设置了 `hegiht` 的值，那就是`hegiht`的值，如果不设置 `hegiht`，会根据 `line-hegiht` 计算高度
+
+
+
+![字体设计](images/README/image-20240618141621223.png)
+
+
+
+![字体设计2](images/README/image-20240618141727598.png)
+
+
+
+由于字体设计原因，文字最终呈现大小，并不一定与 font-size 的值一致，可能比 font-size大，也可能小，通常情况下，文字相对字体设计框，并不是居中垂直的，通常 <u>靠下</u> 一点。
+
+
+
+#### vertical-align
+
+属性名：vertical-align，用于指定同一行元素之间，或 表格单元格内文字的垂直对齐方式，注意此属性不能控制块元素。
+
+1. baseline 使元素的基线与父元素的基线对齐
+2. top 使元素的顶部与其所在行的顶部对齐
+3. middle 使元素的中部与父元素的基线 加上父元素字母 x 的一半对齐
+4. bottom 使元素的底部与所在行的底部对齐
+
+
+
+
+
+### 列表属性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
