@@ -621,41 +621,33 @@ div { text-index: 40px }
 
 
 
+### CSS列表属性
+
+列表相关属性,可用作用在 ul, ol, li 元素上
+
+1. `list-style-type` 设置列表符号
+   1. `none `不显示(常用)
+   2. `square` 实心方块
+   3. `disc` 圆形
+   4. `decimal` 数字 ....
+2. `list-stype-position` 设置列表符号的位置
+   1. `inside` 在 li 里面
+   2. `outside` 在 li 外面
+3. `list-style-image` 自定义符号,用法 url("图片地址")
+4. `list-style` 复合属性,没有数量 顺序要求
 
 
-### 列表属性
+### CSS表格属性
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+边框相关属性(其他元素也可以用)
+1. `border-width` 边框宽度
+2. `border-color` 边框颜色
+3. `border-style` 边框风格
+	1. `none` 默认值,没有线条
+	2. `solid` 实线
+	3. `dashed` 虚线
+	4. `dotted` 圆点线
+	5. `double` 双实线
+4. `border` 复合属性,没有数量, 顺序需求
 
 
