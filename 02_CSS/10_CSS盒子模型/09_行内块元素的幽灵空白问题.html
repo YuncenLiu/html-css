@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内块元素的幽灵空白问题</title>
+    <style>
+        .other {
+            width: 1000px;
+            background: skyblue;
+            /*font-size: 0;*/
+        }
+
+        img {
+            width: 600px;
+            /*vertical-align: bottom;*/
+
+            /* 方案二，这一行不能有其他东西 */
+            /*display: block;*/
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="other">
+    <img src="../../images/mrfz_001.png" alt="明日之子"> Xiang
+</div>
+
+</body>
+</html>

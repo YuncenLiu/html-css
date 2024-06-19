@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9da15c38325fd1d1",
+            "id": "4045cb4acfe5a8a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#ch",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -162,18 +162,31 @@
   },
   "active": "d5193ed230a24b23",
   "lastOpenFiles": [
-    "01_Html/README.md",
+    "02_CSS/images/Pasted image 20240619180057.png",
+    "02_CSS/11_浮动/02_浮动练习.html",
+    "02_CSS/11_浮动/01_元素浮动后特点.html",
+    "02_CSS/11_浮动",
     "README.md",
+    "未命名.canvas",
     "02_CSS/README.md",
-    "01_Html/README2.md",
+    "02_CSS/images/Pasted image 20240619172528.png",
+    "02_CSS/10_CSS盒子模型/09_行内块元素的幽灵空白问题.html",
+    "02_CSS/10_CSS盒子模型/08_元素之间空白问题.html",
+    "02_CSS/images/Pasted image 20240619170553.png",
+    "02_CSS/10_CSS盒子模型/07_布局作业.html",
+    "02_CSS/images/Pasted image 20240619165544.png",
+    "02_CSS/10_CSS盒子模型/06_布局作业.html",
+    "02_CSS/images/Pasted image 20240619165257.png",
+    "02_CSS/10_CSS盒子模型/05_布局作业.html",
+    "02_CSS/10_CSS盒子模型/04_margin合并问题.html",
+    "02_CSS/10_CSS盒子模型/03_margin塌陷问题.html~",
+    "images/small.png",
+    "images/mrfz_003.jpg",
+    "images/mrfz_002.jpg",
+    "images/mrfz_001.png",
     "02_CSS/images/README/image-20240618141727598.png",
-    "02_CSS/images/{{date}}/Pasted image 20240618234734.png",
-    "02_CSS/images/{{date}}",
-    "02_CSS/images/{{context}}/Pasted image 20240618234618.png",
-    "02_CSS/images/{{context}}",
-    "Pasted image 20240618234527.png",
-    "02_CSS/07_CSS表格属性/01_表格独特属性.html~",
-    "02_CSS/07_CSS表格属性/01_表格独特属性.html",
-    "02_CSS/07_CSS表格属性"
+    "02_CSS/images/README/image-20240615184305972.png",
+    "01_Html/README.md",
+    "01_Html/README2.md"
   ]
 }

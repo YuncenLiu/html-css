@@ -662,3 +662,296 @@ div { text-index: 40px }
 5. `caption-side` 设置表格标题位置 `top` 上面, `bottom` 表格下面
 以上 5个属性只有 `<table>` 标签可用
 
+### CSS背景属性
+
+1. `background-color` 背景颜色，默认颜色是 transparent 透明
+2. `background-image` 背景图片，url(图片地址)
+3. `background-repeat` 设置重复方式， `repeat`重复、`repeat-x` 只在水平重复、`repeat-y` 只在垂直重复、`no-repeat` 不重复
+4. `background-position` 设置背景图位置
+	1. 通过关键字 水平：`left`、`center`、`right` 垂直：`top`、`center`、`bottom`
+	2. 通过长度指定位置  2个值，第一个x、第二个y 
+5. `background` 复合属性，虽然没有数量顺序要求，如果不写颜色，默认 `transparent` 会把前面写的 `background-color` 覆盖掉
+
+### CSS鼠标属性
+
+属性名： `cursor` 设置鼠标光标样式
+1. `pointer` 小手
+2. `move` 移动光标
+3. `text` 文字选择器
+4. `crosshair` 十字架
+5. `wati` 等待
+6. `help` 帮助
+
+```css
+cursor: url("../../images/small.png"), pointer;
+```
+
+### 盒子模型
+
+#### CSS长度单位
+
+1. `px` 像素
+2. `em` 相当于当前元素的 font-size 的倍数 当前没有 font-size 就往上找，兜底 16 px 浏览器默认
+3. `rem` 相对于根 `<html>` 元素的 font-size 的倍数
+4. `%` 相对父元素计算
+
+如果不加单位，浏览器直接忽略这个属性
+
+
+#### 元素的显示模式
+
+块元素特点
+1. 在页面独占一行，不会与任何其他元素共用一行，是从上到下排列的
+2. 默认宽度，撑满父元素
+3. 默认高度，由内容撑开
+4. 可以通过 css 设置宽高
+
+行内元素，又称内联元素
+1. 在页面中不独占一行，一行中不能容纳下的行内元素，会在下一行继续从左到右排列
+2. 默认宽度，由内容撑开，高度也是一样
+3. 无法通过 CSS 设置高度
+
+行内快元素，又称 内联块元素 **(兼具 块、行内特点，又是行内、又可以调整宽高)**
+1. 在页面中 不独占一行，一行中不能容纳下的行内元素，会在下一行继续从左到右排列
+2. 默认高度、宽度，由内容撑开
+3. 可以通过 CSS 设置宽高，例如 img 标签
+
+#### 各元素的显示模式
+
+1. **块元素**
+	1. 主体结构标签 `html`、`body`
+	2. 排版标签：`h1` - `h6`、`hr`、`p`、`pre`、`div`
+	3. 列表标签：`ul`、`ol`、`li`、`dl`、`dt`、`dd`
+	4. 表格相关标签：`table`、`tbody`、`thead`、`tfoot`、`tr`、`caption`
+	5. `form` 与 `option`
+2. **行内元素**
+	1. 文本标签：`br`、`em`、`strong`、`sup`、`sub`、`del`、`ins`
+	2. `a` 与 `label`
+3. **行内块元素**
+	1. 图片 `img`
+	2. 单元格 `td`、`th`
+	3. 表单控件 `input`、`texterea`、`select`、`button`
+	4. 框架标签 `iframe`
+
+#### 修改元素显示模式
+
+通过 css 中的 `display` 属性可以修改元素的默认显示模式，常用值如下
+
+1. `none` 元素会被隐藏
+2. `block` 元素将作为块级元素显示
+3. `inline` 元素将作为内联元素显示
+4. `inline-block` 元素将作为行内块元素显示
+
+#### 盒子组成模型
+
+`margin` 外边距、`border` 边框、`padding` 内边距、`content` 内容
+
+#### 盒子内容区
+
+`width` 宽度、`max-width` 最大宽度、`min-width `最小宽度
+`height` 高度 .......
+
+> 注意：max-width、min-width 一般不与 width 一起用， height 也是一样
+
+#### 盒子内边距（padding）
+
+1. `padding-top` 上边距
+2. `padding-right` 右边距
+3. `padding-bottom` 下边距
+4. `padding-left `左边距，都是长度单位
+5. `padding` 复合属性，可以设置 1-4 个值
+
+padding 的使用规则，
+1. 1个值， 四个方向都是这个值
+2. 2个值，x y，上下x，左右y（上下、左右）
+3. 3个值，x y z，上x，左右y，下z（上、左右、下）
+4. 4个值，x y z p 上x，右y，下z，左p（上、右、下、左）
+不能为负数，行内元素，左右内边距没问题，上下内边距不能够完美设置（字体问题）
+
+#### 盒子边框
+
+1. `border-style` 边框线条风格： `none` 默认值、`solid` 实线、`dashed` 虚线、`dotted` 点线、`double` 双实线
+2. `border-width` 宽度，默认 3px
+3. `border-color` 颜色，默认黑色
+4. `border` 符合属性，相同的复合属性还有 `border-left`、`border-right`.... 这些又可以和前面三个相结合。
+
+#### 盒子外边距 （margin）
+
+注意事项：
+1. 子元素 margin，是参考父元素的 content 计算的
+2. 上 margin、左 margin 影响自己的位置，下 margin、右 margin 影响后面兄弟元素的位置
+3. 块级元素、行内元素，均可以完美地设置四个方向的 margin，但行内元素，左右 margin 可以完美设置，上下 margin 设置无效
+4. margin 的值也可以是 auto，会使当前块级元素水平居中
+	```css
+	h1{ margin: 0 auto;}
+```
+5. margin 的值可以是负数
+
+
+#### margin塌陷问题
+![[10_CSS盒子模型/03_margin塌陷问题.html]]
+
+第一个子元素的 margin-top 会作用在 父元素上，最后一个子元素的 margin-bottom 会作用在父元素上
+解决 margin 塌陷，在父元素上设置
+1. `padding` 设置大于 0
+2. `border` 也不为 0 ，可以设置为 `transparent`
+3. 设置 `solid transparent`
+
+#### margin合并问题
+上面兄弟元素的下外边距和下面兄弟的上外边距合并，取一个最大的值，而不是相加，不需要解决，布局的时候，给一个设边距就好。
+
+
+#### 处理内容溢出 (overflow)
+1. `visible` 显示（默认）
+2. `hidden` 隐藏
+3. `scroll` 滚动条
+4. `auto` 自动显示滚动条，内容溢出不显示
+
+`overflow-x` 水平溢出处理方法，同 `overflow-y`，不过这两个是实验性属性，不建议使用，`overflow` 常用的是 `hidden` 和 `auto`
+
+#### 隐藏元素的方式
+1. visibility ，默认值是 show，设置为 hidden 会隐藏元素，元素看不见，但是还占着原来的位置
+2. display，如果是在为 none ，既看不见，也不占位置
+
+#### 样式继承
+
+会继承的有：文字属性、文本属性（除了 vertical-algin）、文字颜色等
+不会继承的有：边框、背景、内外边距、宽高、溢出方式等
+> 一个规律，能继承的属性都是不影响布局的，加单的说，和盒子模型没关系
+
+#### 元素默认样式
+
+1. `a` 标签，下划线、字体颜色、鼠标小手
+2. `h1` - `h6` 文字加粗、文字大小、上下外边距
+3. `p` ，上下外边距
+4. `ul`、`ol` 左内边距
+5. `body` 元素，`8px` 外边距
+
+#### 居中布局
+
+只要给爹设置 `text-align: center;` 就可以让里面的行内元素居中
+
+![[10_CSS盒子模型/05_布局作业.html]]
+![[images/Pasted image 20240619165257.png]]
+```html
+<div class="yun">  
+    <div class="inner">Hello</div>  
+</div>
+```
+
+```css
+.yun {  
+    width: 400px;  
+    height: 400px;  
+    background: gray;  
+    overflow: hidden;  
+}  
+  
+.inner {  
+    width: 200px;  
+    height: 200px;  
+    background: orange;  
+    margin: 100px auto 0;  
+    text-align: center;  
+    line-height: 200px;  
+}
+```
+
+![[10_CSS盒子模型/06_布局作业.html]]
+![[images/Pasted image 20240619165544.png]]
+```html
+<div class="yun">  
+    <span class="inner">Hello</span>  
+</div>
+```
+
+```css
+.yun {  
+    width: 400px;  
+    height: 400px;  
+    background: gray;  
+    text-align: center;  
+    line-height: 400px;  
+}  
+.inner {  
+    font-size: 20px;  
+    background: orange;  
+}
+```
+
+![[10_CSS盒子模型/07_布局作业.html]]
+![[images/Pasted image 20240619170553.png]]
+```html
+<div class="yun">  
+    <div class="inner">  
+        <span>Hello</span>  
+        <img src="../../images/mrfz_001.png" alt="明日之子"/>  
+    </div></div>
+```
+
+```css
+.yun {  
+    width: 400px;  
+    height: 400px;  
+    background: grey;  
+    line-height: 400px;  
+    text-align: center;  
+    font-size: 0;  
+}  
+img {  
+    width: 100px;  
+    vertical-align: middle;  
+}  
+span {  
+    font-size: 40px;  
+    vertical-align: middle;  
+    background: orange;  
+}
+```
+
+
+行内元素、行内块元素，可以被父元素当文本处理
+
+> 可以使用 text-align、line-height、text-indent 等
+
+如何让子元素在父元素水平居中
+1. 若子元素为快元素，给父元素加上 `margin: 0 auto;`
+2. 若子元素为行内元素、行内块元素，给父元素加上 `text-align:center;`
+如何让子元素，在父元素中垂直居中
+1. 若子元素为快元素，给子元素加上 `margin-top`， 值为 `父元素 content - 子元素总高 / 2`
+2. 若子元素为行内元素、行内块元素，让父元素的 `height = line-hegiht`，每个子元素都加上 vertical-align:middle; ，如果要绝对据居中，父元素需要设置 `font-size:0;`
+
+
+#### 元素之间的空白问题
+
+产生原因：行内元素、行内块元素，彼此之间的换行会被浏览器解析成一个空白字符
+解决方案：
+1. 去掉换行和空格（不推荐）
+2. 给父元素设置 `font-size: 0px;` 里面的文字需要重新设置一下大小（推荐）
+
+ #### 行内块的幽灵空白问题
+
+行内元素与文本的基线对齐，而文本的基线与文本最底端之间有距离
+![[images/Pasted image 20240619172528.png]]
+解决方案
+1. 给行内设置 `vertical` 不为 `baseline` 即可
+```css
+img {  
+    vertical-align: top;
+    vertical-align: middel;
+    vertical-align: bottom;
+}
+```
+2. 若父元素只有一张图片，图片设置为 `display: block;`
+3. 给父元素设置 `font-size: 0;`
+
+#### 浮动后特点
+
+1. 脱离文档流 
+2. 不管浮动前是什么元素，浮动后，默认的宽高都是被内容撑开，而且可以设置宽高
+3. 不会独占一行，可以和其他元素共用一行
+4. 不会 margin 合并，也不会 margin 塌陷，能够完美的设置四个方向的 margin、padding
+5. 不会像行内块一样被当文本处理（没有行内块空白问题）
+
+浮动的案例，见：![[11_浮动/02_浮动练习.html]]
+![[images/Pasted image 20240619180057.png]]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS常用长度单位</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        #d1 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background: skyblue;
+        }
+
+        #d2 {
+            /* 第二种单位 em (相当于当前元素的 font-size 的倍数） 当前没有 font-size 就往上找，兜底 16 px 浏览器默认*/
+            width: 10em;
+            height: 10em;
+            /*font-size: 20px;*/
+            background: orange;
+        }
+
+        #d3 {
+            /* 第三种单位， rem 相对于根 <html> 元素的 font-size 的倍数*/
+            width: 5rem;
+            height: 5rem;
+            font-size: 1rem;
+            background: orange;
+        }
+
+        #d4 {
+            /* 第四种长度单位 % 相对其父元素的百分比 */
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background: grey;
+        }
+        .inside {
+            width: 50%;
+            height: 25%;
+            font-size: 20px;
+            background-color: orange;
+        }
+
+        .test{
+            font-size: 40px;
+            text-indent: 2em;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">1</div>
+<hr>
+<div id="d2">1</div>
+<hr>
+<div id="d3">1</div>
+<hr>
+<div id="d4">
+    <div class="inside">4</div>
+</div>
+<hr>
+<div class="test">好好学习，天天向上</div>
+</body>
+</html>
