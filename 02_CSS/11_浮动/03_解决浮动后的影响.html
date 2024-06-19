@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解决浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            /* 第一种解决方案 */
+            /*height: 122px;*/
+
+            background: gray;
+            border: 1px solid black;
+
+            /* 第二种方案 */
+            /*float: left;*/
+
+            /* 第四种方案 */
+            /*overflow: scroll;*/
+
+
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1, .box2, .box3, .box4 {
+            float: left;
+        }
+        /*.box4 {*/
+        /*    !* 改成行内块之后, 就不会独占一行 *!*/
+        /*    display: inline-block;*/
+        /*}*/
+
+        /*.box4 {*/
+        /*    clear: both;*/
+        /*}*/
+
+        .outer::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+    <div>Hello World</div>
+</body>
+</html>

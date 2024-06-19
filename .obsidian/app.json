@@ -4,7 +4,8 @@
   "alwaysUpdateLinks": false,
   "newFileLocation": "current",
   "newLinkFormat": "relative",
-  "useMarkdownLinks": false,
+  "useMarkdownLinks": true,
   "showUnsupportedFiles": true,
-  "attachmentFolderPath": "./images/"
+  "attachmentFolderPath": "./images/",
+  "showLineNumber": true
 }

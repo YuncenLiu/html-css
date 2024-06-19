@@ -832,8 +832,10 @@ padding 的使用规则，
 只要给爹设置 `text-align: center;` 就可以让里面的行内元素居中
 
 ![[10_CSS盒子模型/05_布局作业.html]]
-![[images/Pasted image 20240619165257.png]]
-```html
+
+![](images/Pasted%20image%2020240619165257.png)
+
+​```html
 <div class="yun">  
     <div class="inner">Hello</div>  
 </div>
@@ -858,7 +860,7 @@ padding 的使用规则，
 ```
 
 ![[10_CSS盒子模型/06_布局作业.html]]
-![[images/Pasted image 20240619165544.png]]
+![](images/README/Pasted%20image%2020240619165544.png)
 ```html
 <div class="yun">  
     <span class="inner">Hello</span>  
@@ -880,7 +882,8 @@ padding 的使用规则，
 ```
 
 ![[10_CSS盒子模型/07_布局作业.html]]
-![[images/Pasted image 20240619170553.png]]
+![](images/README/Pasted%20image%2020240619170553.png)
+
 ```html
 <div class="yun">  
     <div class="inner">  
@@ -932,7 +935,7 @@ span {
  #### 行内块的幽灵空白问题
 
 行内元素与文本的基线对齐，而文本的基线与文本最底端之间有距离
-![[images/Pasted image 20240619172528.png]]
+![](images/Pasted image 20240619172528.png)
 解决方案
 1. 给行内设置 `vertical` 不为 `baseline` 即可
 ```css
@@ -953,5 +956,36 @@ img {
 4. 不会 margin 合并，也不会 margin 塌陷，能够完美的设置四个方向的 margin、padding
 5. 不会像行内块一样被当文本处理（没有行内块空白问题）
 
-浮动的案例，见：![[11_浮动/02_浮动练习.html]]
-![[images/Pasted image 20240619180057.png]]
+浮动的案例，见：
+
+![](11_浮动/03_解决浮动后的影响.html)
+
+![](images/Pasted%20image%2020240619180057.png)
+
+浮动后的影响
+1. 对兄弟元素的影响,后面的兄弟,会占据浮动元素之前的位置
+2. 对父元素的影响,不能支撑起父元素的高度,导致父元素高度塌陷
+
+#### 解决浮动产生的影响
+
+![[11_浮动/03_解决浮动后的影响.html]]
+
+
+1. 方案一: 给父元素指定高度
+2. 方案二: 父元素也浮动起来,带来更大的影响
+3. 方案三: 给父元素设置 `overflow: hidden`
+4. 方案四: 在所有浮动元素后面,添加一个**块元素**,并给找个块元素设置 `clear: both`
+5. 方案五: 给浮动的父元素,通过伪选择器,清除浮动,原理和四一样 ,推荐这个方法
+```css
+.outer::after {  
+    content: "";  
+    display: block;  
+    clear: both;  
+}
+```
+
+> 布局中的原则, 这是浮动的时候,兄弟元素要么全都浮动,要么全都不浮动
+
+
+![浮动作业](images/Pasted%20image%2020240619220608.png)
+
