@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>粘性定位</title>
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        .page-header {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: orange;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        .item {
+            background: grey;
+        }
+
+        .first {
+            background: skyblue;
+            font-size: 40px;
+            position: sticky;
+            top: 0;
+        }
+
+
+        .item > h2:last-child {
+            margin-bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="page-header">头部</div>
+<div class="content">
+    <div class="item">
+        <div class="first">A</div>
+        <h2>A1</h2>
+        <h2>A2</h2>
+        <h2>A3</h2>
+        <h2>A4</h2>
+        <h2>A5</h2>
+        <h2>A6</h2>
+        <h2>A7</h2>
+        <h2>A8</h2>
+    </div>
+    <div class="item">
+        <div class="first">B</div>
+        <h2>B1</h2>
+        <h2>B2</h2>
+        <h2>B3</h2>
+        <h2>B4</h2>
+        <h2>B5</h2>
+        <h2>B6</h2>
+        <h2>B7</h2>
+        <h2>B8</h2>
+    </div>
+    <div class="item">
+        <div class="first">C</div>
+        <h2>C1</h2>
+        <h2>C2</h2>
+        <h2>C3</h2>
+        <h2>C4</h2>
+        <h2>C5</h2>
+        <h2>C6</h2>
+        <h2>C7</h2>
+        <h2>C8</h2>
+    </div>
+</div>
+
+</body>
+</html>

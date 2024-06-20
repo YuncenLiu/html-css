@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位层级</title>
+
+    <style>
+        .other {
+            width: 500px;
+            background: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+            position: relative;
+            z-index: 200;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background: grey;
+        }
+
+        .box2 {
+            background: orange;
+            position: relative;
+            top: -150px;
+            left: 50px;
+        }
+
+        .box3 {
+            background: green;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+        }
+
+        .box4 {
+            background: red;
+            position: fixed;
+            top: 175px;
+            left: 175px;
+
+            z-index: 100;
+        }
+
+        /*      .box:hover {
+                  z-index: 2;
+              }*/
+
+        .box5 {
+            background: purple;
+            position: fixed;
+            top: 250px;
+            left: 250px;
+            z-index: 50
+        }
+    </style>
+</head>
+<body>
+<div class="other">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+</div>
+<div class="box box5">5</div>
+</body>
+</html>

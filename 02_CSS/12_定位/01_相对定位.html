@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style>
+        .outer {
+            width: 500px;
+            background: skyblue;
+            border: 1px solid black;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background: #888;
+        }
+        .box2 {
+            background: orange;
+            /* 相对定位，相对的是自己原来的位置 */
+            position: relative;
+            /* left 和 right 同时写， left 生效 */
+            left: 400px;
+        }
+        .box3 {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+</div>
+</body>
+</html>

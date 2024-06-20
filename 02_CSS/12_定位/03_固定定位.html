@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位</title>
+    <style>
+        body {
+            margin: 10px;
+        }
+
+        .outer {
+            width: 500px;
+            background: skyblue;
+            border: 1px solid black;
+
+            position: relative;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background: #888;
+        }
+
+        .box2 {
+            background: orange;
+            position: absolute;
+            top: 220px;
+            left: 20px;
+            /* 绝对定位 会使 float 失效 */
+            /* float: left; */
+            transition: 200ms all linear;
+        }
+
+        .box3 {
+            background: green;
+        }
+
+        .outer:hover .box{
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+</div>
+</body>
+</html>

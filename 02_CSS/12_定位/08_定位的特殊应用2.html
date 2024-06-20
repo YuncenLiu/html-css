@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位的特殊应用2</title>
+    <style>
+    .outer{
+        width: 800px;
+        height: 400px;
+        background: #888;
+        font-size: 20px;
+        /*overflow: hidden;*/
+        position: relative;
+    }
+    .inner {
+        width: 400px;
+        height: 100px;
+        background: orange;
+
+
+        /*margin: 0 auto;*/
+        /*margin-top: 150px;*/
+
+        /* 第二种方案，四个角度方向都给0 然后 margin auto 居中 */
+        /*position: absolute;*/
+        /*top:0;*/
+        /*bottom: 0;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*margin: auto;*/
+
+
+        /* 第三种方案，先移动50%，再移动自身的50%，这里注意 left对应margin-left 不太推荐 */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -50px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">Hello World</div>
+</div>
+</body>
+</html>
