@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+    <style>
+        .box1 {
+            height: 200px;
+            width: 200px;
+            margin: 100px auto;
+            background-color: orange;
+
+            /* v1 水平  v2 垂直  v3 模糊程度 v4 阴影外延 v5 阴影颜色 v6 内阴影*/
+            box-shadow: 10px 10px 20px -10px black inset;
+        }
+        .box2 {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            background-color: skyblue;
+
+            position: relative;
+            transition: 100ms linear all;
+
+        }
+        .box2:hover {
+            top: -5px;
+            left: 0;
+            box-shadow: 10px 10px 20px -10px black;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+
+<div class="box2"></div>
+
+</body>
+</html>
