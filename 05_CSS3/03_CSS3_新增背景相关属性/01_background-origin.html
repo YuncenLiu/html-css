@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-origin</title>
+    <style>
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            margin: 0 auto;
+            font-size: 40px;
+            padding: 50px;
+            border: 50px dashed;
+            background-image: url('../../doc/source/4_CSS3/images/bg01.jpg');
+            /* 使用 origin 最好使用不重复 */
+            background-repeat: no-repeat;
+            background-origin: content-box;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box1">Hello</div>
+
+</body>
+</html>

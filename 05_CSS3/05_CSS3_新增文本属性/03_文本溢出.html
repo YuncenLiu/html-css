@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本溢出</title>
+    <style>
+        ul {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            margin: 100px auto;
+            font-size: 20px;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            white-space: nowrap;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>`normal` 文本超出边界自动换行，文本中换行被浏览器识别为空格（默认值）</li>
+    <li>`pre` 原样输出，与 `pre` 标签效果相同</li>
+    <li>`pre-wrap` 在 `pre` 基础上，超出元素边界自动换行</li>
+    <li>`pre-line` 在 `pre` 基础上，超出边界自动换行，且识别文本中的换行，空格会忽略掉</li>
+    <li>`nowrap` 强制不换号</li>
+</ul>
+</body>
+</html>
