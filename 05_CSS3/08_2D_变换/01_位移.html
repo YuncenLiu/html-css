@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位移</title>
+  <style>
+    .outer {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .inner {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      /* 水平垂直位移 */
+      /*transform: translateY(50px) translateX(50px);*/
+      transform: translate(50px, 50px);
+    }
+    .inner2 {
+      width: 60px;
+      height: 60px;
+      background-color: orange;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">Hello World</div>
+  </div>
+  <div class="outer">
+    <div class="inner2">Hello World</div>
+  </div>
+</body>
+</html>

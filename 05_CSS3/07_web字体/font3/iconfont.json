@@ -1,0 +1,44 @@
+{
+  "id": "4597455",
+  "name": "project",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "35992267",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "35992280",
+      "name": "潜水艇",
+      "font_class": "qianshuiting",
+      "unicode": "e6dd",
+      "unicode_decimal": 59101
+    },
+    {
+      "icon_id": "35992285",
+      "name": "摩托车",
+      "font_class": "motuoche",
+      "unicode": "e6de",
+      "unicode_decimal": 59102
+    },
+    {
+      "icon_id": "35992286",
+      "name": "高铁",
+      "font_class": "gaotie",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "35992289",
+      "name": "小气测",
+      "font_class": "xiaoqice",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    }
+  ]
+}

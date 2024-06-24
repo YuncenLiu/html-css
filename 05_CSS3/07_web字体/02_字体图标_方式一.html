@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./font3/iconfont.js"></script>
+    <style>
+        /* 第一步 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font3/iconfont.woff2?t=1719237065399') format('woff2'),
+            url('./font3/iconfont.woff?t=1719237065399') format('woff'),
+            url('./font3/iconfont.ttf?t=1719237065399') format('truetype');
+        }
+        /* 第二步 */
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 100px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<span class="iconfont">&#xe6dc;</span>
+<svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-gaotie"></use>
+</svg>
+</body>
+</html>

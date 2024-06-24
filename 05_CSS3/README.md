@@ -320,3 +320,68 @@ li {
 ### web字体
 
 > [阿里 定制字体网站](https://www.iconfont.cn/webfont#!/webfont/index) 
+
+简写
+
+```css
+@font-face {  
+    font-family: "情书字体";  
+    src: url('./font1/方正手迹.ttf');  
+}  
+```
+
+语法 (高兼容写法)
+
+```css
+
+@font-face {  
+    font-family: "atguigu";  
+    font-display: swap;  
+    src: url('./font2/webfont.eot'); /* IE9 */  
+    src: url('./font2/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */  
+    url('./font2/webfont.woff2') format('woff2'),  
+    url('./font2/webfont.woff') format('woff'), /* chrome、firefox */  
+    url('./font2/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/  
+    url('./font2/webfont.svg#webfont') format('svg'); /* iOS 4.1- */  
+}
+```
+
+
+### 2D变化
+
+#### 2D位移
+
+首先给元素添加转换属性 transform, 具体属性参考如下
+
+1. translateX 水平位移
+2. translateY 垂直位移
+3. translate 第一个值代表水平 第二个值代表垂直
+
+注意点:
+
+1. 位移与相对定位很相识, 都不脱离文档流,不会影响其他元素
+2. 与相对定位的区别,相对定位的百分比值,参考的都是父元素,定位的百分比值,参考其自身
+3. 浏览器针对位移有优化,与相对定位相比,浏览器处理位移效率更高
+4. transform 可用链式编程 transform: translateX(30px) taranslateY(40px)
+5. 位移对行内元素无效
+6. 配合位移实现元素水平居中
+	```css
+.box{
+	position: absolute;  
+	top: 50%;  
+	left: 50%;  
+	transform: translate(-50%, -50%);
+}
+	```
+
+#### 2D缩放
+
+让元素放大或缩小
+
+首先给 元素添加 transform
+
+1. scaleX 水平缩放比例,值为一个数字, 1表示不缩放, 小于1缩小,大于1放大
+2. scaleY 垂直缩放比例
+3. scale 水平垂直,如果只写一个值,表示水平 垂直 都缩放
+
+注意: scale 的值,支持写负数,但是几乎不用,容易让人产生误解, 借助缩放,可实现小于 12 px 的文字

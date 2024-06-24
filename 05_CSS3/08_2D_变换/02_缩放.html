@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩放</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /*transform: scaleX(0.5) scaleY(0.5);*/
+
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">Hello World</div>
+</div>
+</body>
+</html>
