@@ -9,18 +9,21 @@
             padding: 0;
         }
         body {
-            /* display: flex; */
+             /* 配合 column-count: 1 使用*/
+             display: flex;
         }
         .outer {
             width: 400px;
             background-color: #888;
-            /* float: left; */
-            /* position: absolute; */
-            /* display: inline-block; */
-            /* display: table; */
-            /* overflow: auto; */
-            /* column-count: 1; */
-            /* display: flow-root; */
+            /* 开启和关闭后  查看塌陷问题 */
+            /* 浮动可以开启 BFC 但是会导致下面的块顶上去 */
+            /* float: left;*/
+            /* position: absolute;*/
+            /* display: inline-block;*/
+            /* display: table;*/
+            /* overflow: auto;*/
+            /* column-count: 1;*/
+             display: flow-root;
         }
         .inner {
             width: 100px;
@@ -44,6 +47,6 @@
         <div class="inner inner2"></div>
         <div class="inner inner3"></div>
     </div>
-    <!-- <hr style="height: 50px; background-color: red;"> -->
+     <hr style="height: 50px; background-color: red;">
 </body>
 </html>

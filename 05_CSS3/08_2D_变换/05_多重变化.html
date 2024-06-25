@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重变化</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            /* 先后顺序有讲究， 移动的距离根据自身大小相关，如果先缩放，移动的距离则会有变化 */
+
+            /* 如果先旋转的话，会导致 X、Y 坐标被修改 随后移动会在 旋转的基础上旋转 */
+            /* 一般是 建议把具有破坏性的旋转放在最后面，*/
+            transform: scale(0.5) translate(50px , 50px) rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">你好啊</div>
+</div>
+</body>
+</html>

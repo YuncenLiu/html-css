@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重变换</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            perspective-origin: 102px 102px;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.79);
+            transform-origin: top;
+            transform: rotateX(-45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">Hello</div>
+</div>
+</body>
+</html>

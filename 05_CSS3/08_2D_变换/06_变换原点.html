@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换原点</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            /* 通过关键词调整原点 */
+            /*transform-origin: bottom right;*/
+
+            /* 通过具体的像素定位到原点 根据左上角定位 */
+            transform-origin: 0 0;
+
+            /* 也可以写 % ，也可以单独写一个值，同时表示x、y*/
+
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">Hello</div>
+</div>
+</body>
+</html>

@@ -378,10 +378,310 @@ li {
 
 让元素放大或缩小
 
-首先给 元素添加 transform
+首先给 元素添加 `transform`
 
-1. scaleX 水平缩放比例,值为一个数字, 1表示不缩放, 小于1缩小,大于1放大
-2. scaleY 垂直缩放比例
-3. scale 水平垂直,如果只写一个值,表示水平 垂直 都缩放
+1. `scaleX` 水平缩放比例,值为一个数字, 1表示不缩放, 小于1缩小,大于1放大
+2. `scaleY` 垂直缩放比例
+3. `scale` 水平垂直,如果只写一个值,表示水平 垂直 都缩放
 
 注意: scale 的值,支持写负数,但是几乎不用,容易让人产生误解, 借助缩放,可实现小于 12 px 的文字
+
+#### 2D旋转
+
+在二维平面内顺时针、逆时针旋转
+
+首先给元素添加 `transform`
+
+1. `rotate` 设置旋转角度， 角度值 deg，正值顺时针，负值逆时针
+
+`rotateZ(30deg)` 相当于 `rotate(30deg) `
+
+
+#### 2D扭曲
+
+长方形 变成平行四边形，也是需要 `transform`， 值有 `skewX`、`skewY`、`skew` ，分别代表水平、垂直
+
+
+#### 多重变化
+
+使用 transform 把旋转、移动、缩放都放在一起
+
+```css
+transform: scale(0.5) translate(50px , 50px) rotate(20deg);
+```
+
+多重变化时，建议最后旋转
+
+1. 移动和缩放之间关系：移动的距离根据自身大小相关，如果先缩放，移动的距离则会有变化
+2. 旋转和其他的关系：如果先旋转的话，会导致 X、Y 坐标被修改 随后移动会在 旋转的基础上旋转，一般是 建议把具有破坏性的旋转放在最后面
+
+#### 变换原点
+
+元素变换时，默认原点是元素中心点，使用 transform-origin 设置变换原点，对位移没有影响，对缩放和旋转会产生影响，如果提供两个值，分别代表横坐标、纵坐标，如果提供一个值，比如 left，那就算左中。
+1. `transform-origin: 50px 50px;`
+2. `transform-origin: bottom right;`
+3. `transform-origin: 20% 20%;`
+4. `transform-origin: 0;`
+
+
+### 3D变换
+
+#### `transform-style`开启3D空间
+
+给父元素设置 3D 空间
+
+```css
+transform-style: preserve-3d;
+```
+
+1. `flag`： 让子元素位于此元素的二维平面内（2D空间） 默认值
+2. `preserve-3d`：3D空间
+
+#### `perspective`设置景深
+
+官方：观察者与 z=0 平面距离
+
+使用 `perspective: 1px;` 设置景深，设置在发生 3D 变换元素的父元素
+
+#### `perspective-origin`透视点位置
+
+默认透视点在元素的中心，如果设置了 `padding`、`boder` 也要计算在里面，通常不需要调整透视点
+
+```css
+perspective-origin: 102px 102px;
+```
+
+#### `translate3d`位移
+
+`translateZ` 设置z轴位置，需要制定长度，正值向屏幕外，负值向屏幕里，且不能写百分比
+
+```css
+transform: translate3d(100px,100px,-600px);
+```
+
+#### `scaleZ`缩放
+
+```css
+/* scaleZ(2) 可以理解为直接调整了 景深 perspective */
+transform: scaleZ(2) rotateY(45deg);
+```
+
+
+#### `backface-visibility`背部可见性
+
+```css
+backface-visibility: hidden;
+```
+
+
+## 伸缩盒模型
+
+伸缩容器： `display: flex;` 就变成伸缩容器了，一般是套在父元素，使得所有子元素变成伸缩项目
+
+伸缩项目：伸缩容器所有子元素自动变成伸缩项目。
+
+> `inline-flex` 会使得当前元素变成 行内块元素，多个块之间会有空隙，一般不用。
+
+
+#### 主轴与侧轴
+
+1. 主轴，水平的，默认从左往右
+2. 侧轴，垂直的，默认从上往下
+
+#### 主轴方向
+
+通过属性 `flex-direction` 调整
+
+1. `flex-direction: row; `水平从左到右，默认
+2. `flex-direction: row-reverse;`   水平从右到左
+3. `flex-direction: column; `  垂直从上到下 默认
+4. `flex-direction: column-reverse; `  垂直从下到上
+
+![主轴方向](images/Pasted%20image%2020240625154048.png)
+
+### 主轴换行方式
+
+属性名： `flex-wrap`  值分别有 `nowrap` 不换行，`wrap` 自动换行，` wrap-reverse` 反换行
+
+![flex-wrap](images/Pasted%20image%2020240625154232.png)
+
+### 主轴复合属性
+
+```css
+flex-flow: row wrap;
+```
+
+### 主轴对齐
+
+水平位置对齐 属性名： `justify-content`
+
+1. `flex-start` ：主轴起点对齐。—— 默认值
+2. `flex-end `：主轴终点对齐。
+3. `center` ：居中对齐
+4. `space-between` ：均匀分布，两端对齐（最常用）。
+5. `space-around` ：均匀分布，两端距离是中间距离的一半。
+6. `space-evenly` ：均匀分布，两端距离与中间距离一致。
+
+![justify-content主轴对齐](images/Pasted%20image%2020240625154743.png)
+
+
+### 侧轴对齐
+
+分单行、多行情
+```css
+/* 主轴的对齐方式，主轴的起始位置 */
+justify-content: flex-start;  
+  
+/* 侧轴的对齐方式，侧轴的起始位置对齐 */
+align-items: flex-start;  
+  
+/* 侧轴的对齐方式，侧轴的结束位置对齐 */
+align-items: flex-end; 
+  
+/* 侧轴的对齐方式，侧轴的中间位置对齐 */
+align-items: center; 
+  
+/* 侧轴的对齐方式，侧轴的中间位置对齐 */
+align-items: baseline; 
+  
+/* 侧轴的对齐方式，拉伸到整个父容器（前提：伸缩项目不能给高度），默认 */
+align-items: stretch; 
+```
+
+
+多行
+```css
+/* 侧轴的对齐方式（多行）侧轴的起始位置对齐 */ 
+align-content: flex-start;   
+  
+/* 侧轴的对齐方式（多行）侧轴的结束位置对齐 */ 
+align-content: flex-end;   
+  
+/* 侧轴的对齐方式（多行）侧轴的中间位置对齐 */ 
+align-content: center;   
+  
+/* 侧轴的对齐方式（多行），伸缩项目之间的距离是相等的，且是边缘距离的2倍 */ 
+align-content:space-around;   
+  
+/* 侧轴的对齐方式（多行），伸缩项目之间的距离是相等的，且边缘没有距离 */ 
+align-content:space-between;   
+  
+/* 侧轴的对齐方式（多行），伸缩项目之间的距离是相等的 */ 
+align-content:space-evenly;   
+  
+/* 侧轴的对齐方式（多行），拉伸，默认 */ 
+align-content: stretch;
+```
+
+
+### Flex实现水平居中
+
+```html
+<div class="outer">  
+    <div class="inner"></div>  
+</div>
+```
+
+方案一
+```css
+.outer {  
+    width: 400px;  
+    height: 400px;  
+    background-color: #888;  
+    display: flex;  
+     justify-content: center;   
+     align-items: center;   
+}  
+.inner {  
+    width: 100px;  
+    height: 100px;  
+    background-color: orange;  
+}
+```
+
+方案二
+```css
+.outer {  
+    width: 400px;  
+    height: 400px;  
+    background-color: #888;  
+    display: flex;  
+}  
+.inner {  
+    width: 100px;  
+    height: 100px;  
+    background-color: orange;  
+    margin: auto;  
+}
+```
+
+
+## 响应式布局
+
+### 媒体查询
+
+1. `all` 检测所有设备
+2. `screen` 检测所有电子屏幕、手机、平板、各种屏幕
+3. `print` 检测打印机
+
+[完整列表](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media)
+
+
+![媒体特性](images/Pasted%20image%2020240625163620.png)
+
+![屏幕](images/Pasted%20image%2020240625163637.png)
+
+#### 运算符
+
+1. `and` 并且
+2. `，` 或。`or` 或
+3. `not` 否定
+4. `only` 只有
+
+#### 外部样式
+
+```html
+<link rel="stylesheet" media="screen and (min-width:1200px)" href="./css/huge.css">
+```
+
+```css
+/* 超小屏幕 */@media screen and (max-width:768px) {  
+    h1 {  
+        background-color: orange;  
+    }  
+}
+
+/* 大屏幕 */@media screen and (min-width:992px) and (max-width:1200px) {  
+    h1 {  
+        background-color: deepskyblue;  
+    }  
+}
+```
+
+## BFC
+
++ MDN 对 BFC 描述
+	块格式化上下文（Block Formatting Context，BFC） 是 Web 页面的可视 CSS 渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。
+
+BFC 可以理解为一个特异功能
+
+
+### BFC解决什么问题
+
+1. 开启 BFC 后，子元素不会产生 margin 塌陷问题
+2. 开启后，直接不回被浮动元素所覆盖
+3. 开启后，就算子元素浮动，元素自身高度也不会塌陷
+
+### 如何开启
+
+1. 根元素
+2. 浮动元素
+3. 绝对定位、固定定位元素
+4. 行内块元素
+5. 表单单元格 `table`、`thead`、`tbody`、`tfoot`、`th`、`td`、`tr`、`caption`
+6. `overflow` 的值不为 `visable` 的块元素
+7. 伸缩项目
+8. 多列容器
+9. `column-span` 为 `all` 的元素
+10. `display` 的值为 `flow-root`
+

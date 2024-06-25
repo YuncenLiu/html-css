@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>尚硅谷官网</title>
     <style>
-        * { 
-            font-family: Arial; 
-            font-size: 14px; 
-            margin: 0; 
-            padding: 0; 
-            border: none; 
+        * {
+            font-family: Arial;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            border: none;
         }
         a { text-decoration: none; }
         ul { list-style: none; }
@@ -20,22 +20,27 @@
         }
         body {
             background-image: url('../images/bg.jpg');
+            /* 关闭背景图重复 */
             background-repeat: no-repeat;
+            /* 背景图占满视口（最优解） */
             background-size: cover;
         }
         .page-header {
             height: 70px;
             background-color: rgba(0, 0, 0, 0.7);
             display: flex;
+            /* 均匀分布，两端对齐（最常用） */
             justify-content: space-between;
+            /* 侧轴的对齐方式，侧轴的中间位置对齐 */
             align-items: center;
             padding: 0 20px;
         }
         .header-nav {
             display: flex;
-            
+
         }
         .header-nav li a {
+            /* 右上角四个校区设置 */
             color: white;
             font-size: 20px;
             border: 1px solid white;
