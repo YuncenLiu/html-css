@@ -1,4 +1,6 @@
-# HTML-CSS
+# study-html-css-example
+
+HTML、CSS 样式基础示例，于 2024年4月 通过 B站学习。
 
 > 2024-06-12
 > 
